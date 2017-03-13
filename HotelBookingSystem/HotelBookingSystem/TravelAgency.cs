@@ -42,7 +42,7 @@ namespace HotelBookingSystem
         public void receiveConfirmation(OrderClass obj)
         {
             Console.WriteLine("Printing Confirmation at Travel Agency : " + obj.ToString());
-            Console.WriteLine("Time for Order in Ms = " +  DateTime.Now.Subtract(DateTime.Parse(obj.Timestamp)).TotalMilliseconds +"\n");
+            Console.WriteLine("Time of Order Confirmation = " +  DateTime.Now +"\n------------");
         }
     }
 }

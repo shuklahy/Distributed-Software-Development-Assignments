@@ -25,7 +25,7 @@ namespace HotelBookingSystem
 
         public override string ToString()
         {
-            return "Order: TA-[" + senderId + "] CCno-" + cardNo + " HS-[" + receiverId + "] A-"+ amount + " Time-" + timestamp;
+            return "Order: TA-[" + senderId + "] CCno-" + cardNo + " HS-[" + receiverId + "] A-"+ amount + " OrderPlacedTime-" + timestamp;
         }
 
         public string Timestamp
