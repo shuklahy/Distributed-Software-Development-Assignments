@@ -90,7 +90,10 @@ namespace HotelBookingSystem
             Console.WriteLine();
             Console.WriteLine("Press Any Key to Exit");
 
+            // Since we can't track grandchildren of main thread, use this sleep as an option to wait for children to finish
+            // Removing this doesn't pose any problemt to program 
             Thread.Sleep(2000);
+
             Console.Read();
 
         }

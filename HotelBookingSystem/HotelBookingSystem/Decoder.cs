@@ -30,6 +30,7 @@ namespace HotelBookingSystem
             int Amount = Int32.Parse(words[3]);
             string timestamp = words[4];
 
+            //return order object
             return new OrderClass(SenderId, CardNo, ReceiverId, Amount, timestamp);
         }
     }

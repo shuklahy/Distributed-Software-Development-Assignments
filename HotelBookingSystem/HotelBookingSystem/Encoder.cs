@@ -31,7 +31,7 @@ namespace HotelBookingSystem
                 Console.WriteLine(e.ToString());
             }
             
-
+            //returning encoded string
             return encodedString;
         }
     }
