@@ -85,11 +85,12 @@ namespace HotelBookingSystem
                 l1[i].Join();
             }
 
-            Console.WriteLine("***************\n Done With Booking \n Main Thread is Stopping \n GrandChildren thread may follow\n"+
-                "*************************");
+            Console.WriteLine("/////////////////////////// \n Done With Booking \n"+
+                " Main Thread is Stopping \n GrandChildren thread may follow\n"+
+                "///////////////////////////");
 
             Console.WriteLine();
-            Console.WriteLine("Press Any Key to Exit");
+            Console.WriteLine("/////////////////-------Press Any Key to Exit--------------/////////////");
 
             
 
