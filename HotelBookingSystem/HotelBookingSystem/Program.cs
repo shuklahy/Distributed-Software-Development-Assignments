@@ -1,15 +1,26 @@
-﻿using System;
+﻿/*
+ * @author : Hitendra Shukla
+ * ASU ID : 1211175859
+ * Project : Hotel Booking System Using Threads
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using HotelBookingSystem;
-
+/*
+ * NOTE: I have set price cut event to 5 you can set it to any value
+ * For higher values though the program will stuck since I have used random function for pricing model
+ * and in case of higher cutoff the price sometimes hits 0 which is min value and since no other min value can
+ * generated no new pricecut events will be generated and Hotel supplier will go on forever
+ */
 namespace HotelBookingSystem
 {
     public delegate void priceCutDelegate(HotelSupplier hs);
-    public delegate void orderConfirmedDelegate(OrderClass obj);
-
+    
     class Program
     {
         public static int noOfPriceCutEvents = 5; //Determines the number of Events hotelsupplier should emit 
@@ -24,13 +35,13 @@ namespace HotelBookingSystem
 
         static void Main(string[] args)
         {
-
             
             Console.WriteLine("Hotel Booking System");
 
             hs = new HotelSupplier[hsCount];
             ta = new TravelAgency[taCount];
             Thread[] hst = new Thread[hsCount];
+            
             //Create Hotel Supplier
             for(int i=0; i<hsCount; i++)
             {
@@ -61,6 +72,8 @@ namespace HotelBookingSystem
                 l1.Add(hst[i]);
             }
 
+            // Dispatcher Thread:  THis thread is responsible for reading from buffer and deliverying order to Hotel supplier Object
+            // Hotel supplier will then spawn new thread to process this order
             Thread dispatcher = new Thread(new ThreadStart(HotelSupplier.receiveOrder));
             dispatcher.Start();
             l1.Add(dispatcher);
@@ -72,8 +85,12 @@ namespace HotelBookingSystem
                 l1[i].Join();
             }
 
-            Console.WriteLine("***************\n Done With Booking \n [Note This ensures that the program will Exit "+
-                "after some of remaining threads complete execution]\n*************************");
+            Console.WriteLine("***************\n Done With Booking \n *************************");
+
+            Console.WriteLine();
+            Console.WriteLine("Press Any Key to Exit");
+
+            Thread.Sleep(2000);
             Console.Read();
 
         }

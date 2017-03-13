@@ -61,7 +61,7 @@ namespace HotelBookingSystem
             Console.WriteLine("\n*** ThreadALERT : Stopping Hotel Supplier Thread"+this.ReceiverId +"\n");            
         }
 
-        // Call this when you receive order from MC Buffer
+        // Call this when you receive order from Multicell Buffer
         public void OrderProcessing(OrderClass obj)
         {
             Console.WriteLine("Hotel Supplier "+ this.receiverId+" is processing Order");
@@ -79,7 +79,9 @@ namespace HotelBookingSystem
 
         
         public static void receiveOrder() {
+
             while (Program.mcb.totalReads < (Program.noOfPriceCutEvents*Program.taCount*Program.hsCount)) {
+
                 String orderStr = Program.mcb.getOneCell();
                 OrderClass order = Decoder.decode(orderStr, Program.key);
                 Thread thread = new Thread(() => Program.hs[order.ReceiverId - 1].OrderProcessing(order));

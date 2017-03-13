@@ -13,40 +13,43 @@ namespace HotelBookingSystem
         private  String[] dataCells = new String[3];
         private  int tail = 0;
         private  int head = 0;
-        private  int nElements = 0;
+        private  int bufferEleCount = 0;
         public   int totalReads = 0;
 
-        private Object []cellLocks = new Object[3];
-        private Object globallock = new Object();
+        private Object []cellLocks = new Object[3]; //Locks for individual Thread
+        
         static Semaphore write = new Semaphore(3, 3);
         static Semaphore read = new Semaphore(1, 1);
 
         public MultiCellBuffer()
         {
-            for(int i=0; i<SIZE; i++)
+            //Initialize Lock Objects
+            for (int i=0; i<SIZE; i++)
             {
                 cellLocks[i] = new Object();
             }
         }
 
        public  String getOneCell()
-        {
+       {
             String encodedString = "";
+            
             //Logic to get cell from buffer
             read.WaitOne(); //This is as good as Mutual Exclusion
 
-            while (nElements == 0)
-                Monitor.Wait(this);
-            head = (head + 1) % SIZE;
+            
             //Only Lock cell for which the thread is reading
-            lock (cellLocks[head])
+            lock (this)
             {
-                
+
+                while (bufferEleCount == 0)
+                    Monitor.Wait(this);
+                head = (head + 1) % SIZE;
                 //Thread.Sleep(1000);
                 Console.WriteLine("Reading from buffer at index :"+head);
                 
                 encodedString = dataCells[head];
-                nElements--;
+                bufferEleCount--;
                 this.totalReads++;
                 read.Release();
                 Monitor.PulseAll(this);
@@ -66,24 +69,19 @@ namespace HotelBookingSystem
             }
 
             //lock on individual cell
-            lock (cellLocks[tail])
+            lock (this)
             {                
 
-                while(nElements == SIZE)
+                while(bufferEleCount == SIZE)
                 {
                     Monitor.Wait(this);
                 }
                 Console.WriteLine("Writing to buffer at index : " + tail);
                 dataCells[tail] = encodedstr;
-                nElements++;
+                bufferEleCount++;
                 write.Release();
-                Monitor.PulseAll(this);
-            }
-                
-            
+                Monitor.Pulse(this);
+            }    
         }
-
-
-        
     }
 }
