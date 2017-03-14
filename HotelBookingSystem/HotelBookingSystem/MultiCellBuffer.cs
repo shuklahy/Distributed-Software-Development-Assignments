@@ -37,9 +37,11 @@ namespace HotelBookingSystem
 
             read.WaitOne();
 
+            //Decrement index atomically
             Interlocked.Decrement(ref this.index);
             int copy = this.index;
 
+            //Copy is maintained basically for each thread
             lock (dataCells[copy]) {
                 Console.WriteLine("Reading from buffer at index :" + copy);
                 encodedString = dataCells[copy].getCell();
@@ -54,8 +56,10 @@ namespace HotelBookingSystem
         {
             write.WaitOne();
 
-            //lock on individual cell
+            //Increment index Automatically
             Interlocked.Increment(ref this.index);
+
+            //copy is basically maitained for each thread
             int copy = this.index;
             lock (dataCells[copy-1])
             {
