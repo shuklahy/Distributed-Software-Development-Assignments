@@ -11,12 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using HotelBookingSystem;
-/*
- * NOTE: I have set price cut event to 5 you can set it to any value
- * For higher values though the program will stuck since I have used random function for pricing model
- * and in case of higher cutoff the price sometimes hits 0 which is min value and since no other min value can
- * generated no new pricecut events will be generated and Hotel supplier will go on forever
- */
+
 namespace HotelBookingSystem
 {
     public delegate void priceCutDelegate(HotelSupplier hs);
