@@ -14,7 +14,8 @@ namespace HotelBookingSystem
         private Random random;
         private int receiverId;
         private int cnt;
-        private int unitPrice;
+        private double tax;
+        private double locationCharge;
         // Event for Hotel Supplier
         public event priceCutDelegate priceCut;
         
@@ -24,8 +25,9 @@ namespace HotelBookingSystem
             this.price = Int32.MaxValue; 
             this.random = new Random();
             this.receiverId = receiverId;
-            this.unitPrice = this.receiverId * 5;
             this.cnt = 0;
+            this.tax = (this.receiverId + 1) * 3;
+            this.locationCharge = (this.receiverId + 1) * 5; 
         }
 
 
@@ -35,6 +37,12 @@ namespace HotelBookingSystem
             set { receiverId = value; }
         }
 
+
+        public int Price
+        {
+            get { return price; }
+            set { price = value;}
+        }
         // Pricing Model
         public void PricingModel()
         {
@@ -50,11 +58,19 @@ namespace HotelBookingSystem
                 int curPrice = this.random.Next(0,500);
                 if(curPrice < this.price)
                 {
-                    this.price = curPrice;
-                    Console.WriteLine("\n************ Price Reduced for HS-" + this.ReceiverId + " new price=" + this.price + "*****************\n");
-                    //Emit priceCut Event to Travel Agencies
-                    this.priceCut(this);
-                    this.cnt++;
+                    if (curPrice == 0)
+                    {
+                        this.price = 250;
+                    }
+                    else
+                    {
+
+                        this.price = curPrice;
+                        Console.WriteLine("\n************ {{EVENT}} Price Reduced for HS-" + this.ReceiverId + " New Price=" + this.price + "*****************\n");
+                        //Emit priceCut Event to Travel Agencies
+                        this.priceCut(this);
+                        this.cnt++;
+                    }
                 }
 
             }
@@ -70,8 +86,9 @@ namespace HotelBookingSystem
                 Console.WriteLine("Invalid card number bailing out");
             }else
             {
+                double totalcost = obj.UnitPriceOfRoom * obj.Amount + this.tax + this.locationCharge;
                 //send confirmation to Travel Agency
-                Console.WriteLine("Order Processed by Hotel Supplier : " + this.receiverId + " for Travel Agency: " + obj.SenderId + " TotalPrice:" + this.unitPrice * obj.Amount + " @unitPrice-"+this.unitPrice);
+                Console.WriteLine("Order Processed by Hotel Supplier :" + this.receiverId + " for Travel Agency: " + obj.SenderId + " TotalPrice:" +totalcost +" UnitsBooked:"+obj.Amount);
                 Program.ta[obj.SenderId - 1].receiveConfirmation(obj);
             }
         }

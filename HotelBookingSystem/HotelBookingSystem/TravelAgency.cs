@@ -22,9 +22,9 @@ namespace HotelBookingSystem
         public void placeOrderUsingTravelAgencyThread(HotelSupplier hs)
         {
             Random rand = new Random();
-            this.amount = rand.Next(1, 10);
+            this.amount =  rand.Next(1, 500 - hs.Price);
 
-            OrderClass o = new OrderClass(this.senderId, this.cardNo, hs.ReceiverId, this.amount, DateTime.Now.ToString());
+            OrderClass o = new OrderClass(this.senderId, this.cardNo, hs.ReceiverId, this.amount, hs.Price, DateTime.Now.ToString());
             String encodedString = Encoder.encode(o, Program.key);
 
             // put this string into buffer

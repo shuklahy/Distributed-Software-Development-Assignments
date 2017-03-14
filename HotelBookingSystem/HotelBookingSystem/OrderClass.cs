@@ -13,19 +13,26 @@ namespace HotelBookingSystem
         private int receiverId; // HotelSupplier ID
         private int amount;  // No of room to order
         private string timestamp;
+        private int unitPriceOfRoom;
        
-        public OrderClass(int senderId, int cardNo, int receiverId, int amount, string timestamp)
+        public OrderClass(int senderId, int cardNo, int receiverId, int amount, int unitPrice, string timestamp)
         {
             this.senderId = senderId;
             this.cardNo = cardNo;
             this.receiverId = receiverId;
             this.amount = amount;
             this.timestamp = timestamp;
+            this.unitPriceOfRoom = unitPrice;
         }
 
+        public int UnitPriceOfRoom
+        {
+            get { return unitPriceOfRoom; }
+            set { unitPriceOfRoom = value; }
+        }
         public override string ToString()
         {
-            return "Order: TA-[" + senderId + "] CCno-" + cardNo + " HS-[" + receiverId + "] A-"+ amount + " OrderPlacedTime-" + timestamp;
+            return "Order: TA-[" + senderId + "] CCno-" + cardNo + " HS-[" + receiverId + "] AmountofBooking-"+ amount + " OrderPlacedTime-" + timestamp;
         }
 
         public string Timestamp

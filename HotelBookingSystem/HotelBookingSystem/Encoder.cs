@@ -12,7 +12,7 @@ namespace HotelBookingSystem
         public static String encode(OrderClass o, String key)
         {
             String encodedString = "";
-            String input = ""+ o.SenderId + "," + o.CardNo + "," + o.ReceiverId + "," + o.Amount + "," + o.Timestamp; 
+            String input = ""+ o.SenderId + "," + o.CardNo + "," + o.ReceiverId + "," + o.Amount + "," +o.UnitPriceOfRoom + "," + o.Timestamp; 
 
             byte[] inputArray = UTF8Encoding.UTF8.GetBytes(input);
             try

@@ -23,12 +23,12 @@ namespace HotelBookingSystem
     
     class Program
     {
-        public static int noOfPriceCutEvents = 5; //Determines the number of Events hotelsupplier should emit 
+        public static int noOfPriceCutEvents = 10; //Determines the number of Events hotelsupplier should emit 
         public static int hsCount = 2; // Number of Hotel supplier : change this to increase HS
         public static int taCount = 5; // Number of Travel Agency : Change this to increase TA
 
         public static String key = "ABCDEFGHIJKLMNOP";
-        public static MultiCellBuffer mcb = new MultiCellBuffer();
+        public static MultiCellBuffer mcb = null;
         public static TravelAgency[] ta = null;
         public static HotelSupplier[] hs = null;
         public static List<Thread> l1 = new List<Thread>();
@@ -49,11 +49,13 @@ namespace HotelBookingSystem
             }
 
             //create Travel Agencies
-            for(int i=0; i<taCount; i++)
+            for (int i=0; i<taCount; i++)
             {
                 ta[i] = new TravelAgency(i + 1, 5000 + i * 2);
             }
 
+            // create MultiCell Buffer
+            mcb = new MultiCellBuffer();
 
             // Register travel agencies for priceCut and orderConfirm Events
             for(int i=0; i<hsCount; i++)
@@ -89,6 +91,7 @@ namespace HotelBookingSystem
                 " Main Thread is Stopping \n GrandChildren thread may follow\n"+
                 "///////////////////////////");
 
+            
             Console.WriteLine();
             Console.WriteLine("/////////////////-------Press Any Key to Exit--------------/////////////");
 

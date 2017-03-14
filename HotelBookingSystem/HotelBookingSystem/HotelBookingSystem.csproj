@@ -50,6 +50,7 @@
     <Compile Include="OrderClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SingleCellBuffer.cs" />
     <Compile Include="TravelAgency.cs" />
   </ItemGroup>
   <ItemGroup>

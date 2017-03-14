@@ -28,10 +28,11 @@ namespace HotelBookingSystem
             int CardNo = Int32.Parse(words[1]);
             int ReceiverId = Int32.Parse(words[2]);
             int Amount = Int32.Parse(words[3]);
-            string timestamp = words[4];
+            int unitPrice = Int32.Parse(words[4]);
+            string timestamp = words[5];
 
             //return order object
-            return new OrderClass(SenderId, CardNo, ReceiverId, Amount, timestamp);
+            return new OrderClass(SenderId, CardNo, ReceiverId, Amount, unitPrice, timestamp);
         }
     }
 }
