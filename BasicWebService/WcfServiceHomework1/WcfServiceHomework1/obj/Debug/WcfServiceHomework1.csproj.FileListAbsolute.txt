@@ -1,5 +1,0 @@
-A:\ASU Sem2\DSOD\Projects\WcfServiceHomework1\WcfServiceHomework1\bin\WcfServiceHomework1.dll.config
-A:\ASU Sem2\DSOD\Projects\WcfServiceHomework1\WcfServiceHomework1\bin\WcfServiceHomework1.dll
-A:\ASU Sem2\DSOD\Projects\WcfServiceHomework1\WcfServiceHomework1\bin\WcfServiceHomework1.pdb
-A:\ASU Sem2\DSOD\Projects\WcfServiceHomework1\WcfServiceHomework1\obj\Debug\WcfServiceHomework1.dll
-A:\ASU Sem2\DSOD\Projects\WcfServiceHomework1\WcfServiceHomework1\obj\Debug\WcfServiceHomework1.pdb

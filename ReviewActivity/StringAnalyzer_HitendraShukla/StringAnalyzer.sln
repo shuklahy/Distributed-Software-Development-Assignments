@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringAnalyzer", "StringAnalyzer\StringAnalyzer.csproj", "{0E079796-8DE8-4DD6-9854-0F763A6D3062}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringConsumer", "StringConsumer\StringConsumer.csproj", "{422C1ADC-F907-4115-9424-330E1F018739}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E079796-8DE8-4DD6-9854-0F763A6D3062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E079796-8DE8-4DD6-9854-0F763A6D3062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E079796-8DE8-4DD6-9854-0F763A6D3062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E079796-8DE8-4DD6-9854-0F763A6D3062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{422C1ADC-F907-4115-9424-330E1F018739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{422C1ADC-F907-4115-9424-330E1F018739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{422C1ADC-F907-4115-9424-330E1F018739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{422C1ADC-F907-4115-9424-330E1F018739}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

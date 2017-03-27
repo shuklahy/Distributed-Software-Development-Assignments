@@ -1,0 +1,18 @@
+
+Service 14.	Solar Energy Service 
+Description: Create a service that returns the annual average sunshine index of a given position (latitude, longitude). This service can be used for deciding if installing solar energy device is effective at the location.
+Operation: decimal SolarIntensity(decimal latitude, decimal longitude)
+Input: latitude and longitude
+Output: a number reflecting the annual average solar intensity at the location.
+You must discover what is available and how the discovered service can be used.
+
+Service 15.	Wind Energy Service 
+Description: Create a service that returns the annual average wind index of a given position (latitude, longitude). This service can be used for deciding if installing windmill device is effective at the location.
+Operation: decimal WindIntensity(decimal latitude, decimal longitude)
+Input: latitude and longitude
+Output: a number reflecting the annual average wind intensity at the location.
+You must discover what is available and how the discovered service can be used.
+
+Hint: you may find solar and wind data from sources like: 
+https://eosweb.larc.nasa.gov/cgi-bin/sse/global.cgi?email=skip@larc.nasa.gov
+

@@ -1,0 +1,30 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WindService_TryIt.aspx.cs" Inherits="TryIt_Pages.WindService_TryIt" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>WindService TryIt page</title>
+</head>
+<body>
+    <h2>Wind Energy Service - TryIt Page</h2>
+
+    <strong>URL</strong>: <a href="http://localhost:49872/Service1.svc?wsdl">http://localhost:49872/Service1.svc?wsdl</a><br />
+    <Strong>Method Name</Strong> :<i><b>&nbsp;&nbsp;&nbsp;&nbsp; WindIntensity<i/></b><br />
+    <strong>Method Input Parameter: </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; decimal latitude, decimal longitude <br />
+    <strong>Method output Parameter:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong> decimal windIntensity <br />
+
+    <form id="form1" runat="server">
+    <div>
+    Latitude: &nbsp;&nbsp; <input type="text" name="Enter Latitude" value="0.0"><br>
+    Longitude: <input type="text" name="Enter Longitude" value="0.0"><br>
+    
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+        <br /><br />
+
+    WindIntensity Value&nbsp; <i/>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    </div>
+    </form>
+</body>
+</html>
