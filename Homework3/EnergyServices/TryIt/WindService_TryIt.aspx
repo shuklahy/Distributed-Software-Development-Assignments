@@ -17,7 +17,7 @@ mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">serv
     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This service can be used for deciding if installing windmill device is effective at the location.</span><strong><br />
     <br />
-    URL</strong>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://localhost:49872/Service1.svc?wsdl">http://localhost:49872/Service1.svc?wsdl</a><br />
+    URL</strong>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://10.1.22.105:8003/Service1.svc?wsdl">http://10.1.22.105:8003/Service1.svc?wsdl</a><br />
     <strong>
     <br />
     Method:<br />

@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace TryIt
 {
-    public partial class SolarService_TryIt : System.Web.UI.Page
+    public partial class GasStationService_TryIt : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,10 +19,12 @@ namespace TryIt
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            decimal latitude = decimal.Parse(TextBox3.Text);
-            decimal longitude = decimal.Parse(TextBox4.Text);
-            String baseurl = "http://10.1.22.105:8004/Service1.svc/";
-            string url = @baseurl + "SolarIntensity?lat=" + latitude + "&lon =" + longitude;
+            double lat = Double.Parse(TextBox3.Text);
+            double lon = Double.Parse(TextBox4.Text);
+
+            String baseurl = "http://10.1.22.105:8001/Service1.svc";
+            string url = @baseurl + "/getGasStation?lat=" + lat + "&lon=" + lon;
+            
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             WebResponse response = request.GetResponse();
@@ -32,32 +34,26 @@ namespace TryIt
             String json = reader.ReadToEnd();
             Console.WriteLine(json);
 
-            result r = processJsonJavaScriptSerializer(json);
-            if (r.status.Equals("Invalid Input"))
-            {
-                Label2.Text = "Invalid Input";
-            }
-            else
-            {
-                Label2.Text = r.avgIntensity.ToString();
-            }
+            result[] output = processJsonJavaScriptSerializer(json);
+            ListView1.DataSource = output;
+            ListView1.DataBind();
 
 
         }
-        static result processJsonJavaScriptSerializer(String data)
+        static result[] processJsonJavaScriptSerializer(String data)
         {
             JavaScriptSerializer js = new JavaScriptSerializer();
-            result r = js.Deserialize<result>(data);
+            result[] r = js.Deserialize<result []>(data);
             return r;
         }
 
         [Serializable]
         public class result
         {
-            public decimal avgIntensity { get; set; }
-            public String status { get; set; }
-
+            public String name { get; set; }
+            public String openNow { get; set; }
+            public String address { get; set; }
         }
-    
+        
     }
 }

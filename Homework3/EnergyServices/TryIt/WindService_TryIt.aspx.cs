@@ -22,7 +22,7 @@ namespace TryIt
 
             decimal latitude = decimal.Parse(TextBox1.Text);
             decimal longitude = decimal.Parse(TextBox2.Text);
-            String baseurl = "http://localhost:49872/Service1.svc/";
+            String baseurl = "http://10.1.22.105:8003/Service1.svc/";
             string url = @baseurl + "WindIntensity?lat=" + latitude + "&lon =" + longitude;
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
