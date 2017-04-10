@@ -15,7 +15,7 @@ namespace GoogleMapLocator
         public result getMapURL(double latitude, double longitude)
         {
             result r = new result();
-            String API_KEY = "AIzaSyDORC6S_ngjk-RnMYy4WkwRqdd9yZF7P4Q";
+            String API_KEY = "XXXXXXX";
 
             r.status = "OK";
 

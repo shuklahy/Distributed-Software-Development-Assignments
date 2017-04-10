@@ -15,7 +15,7 @@ namespace GasStationService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        String API_KEY = "AIzaSyBLR-5Nq0RFRvIy5Qz6Pqqd8CEtncfzeq8";
+        String API_KEY = "xxxxxx";
 
         result[] IService1.getGasStation(double latitude, double longitude)
         {
