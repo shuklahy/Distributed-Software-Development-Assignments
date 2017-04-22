@@ -18,21 +18,17 @@
     <form id="form1" runat="server">
     <div class="auto-style1">
     
-        <span class="auto-style2"><strong>XML Reading Example</strong></span><br />
+        <span class="auto-style2"><strong>XML Reader</strong></span><br />
         <br />
-        node type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; node name:<br />
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        URL for the XML (try <a href="http://sod73.asu.edu/~jbalasoo/sp2016/data.xml ">http://sod73.asu.edu/~jbalasoo/sp2016/data.xml </a> for tsting)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+        URL for the XML<br />
         <asp:TextBox ID="TextBox3" runat="server" Width="465px"></asp:TextBox>
         <br />
         <br />
+        <asp:TextBox ID="TextBox4" runat="server" Height="272px" ReadOnly="True" TextMode="MultiLine" Width="1066px"></asp:TextBox>
         <br />
     
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="View Root" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Read" />
         <br />
     
     </div>
