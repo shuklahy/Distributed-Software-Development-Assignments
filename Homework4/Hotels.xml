@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<Hotels>
+	<Hotel Stars="****">
+		<Name>Graduate Tempe</Name>
+		<Contact>
+			<Phone>4809679431</Phone>
+			<Email>info@graduatetempe.com</Email>
+		</Contact>
+		<Address>
+			<Number>225</Number>
+			<Street>E Apache Blvd</Street>
+			<City>Tempe</City>
+			<Zip>85281</Zip>
+		</Address>
+	</Hotel>
+
+	<Hotel Stars="***">
+		<Name>Quality Inn At Asu</Name>
+		<Contact>
+			<Phone>4807742500</Phone>
+			<Email>info@qinn.com</Email>
+		</Contact>
+		<Address>
+			<Number>1375</Number>
+			<Street>E University Dr</Street>
+			<City>Tempe</City>
+			<Zip>85281</Zip>
+		</Address>
+	</Hotel>
+
+	<Hotel Stars="****">
+		<Name>Elan Hotel</Name>
+		<Contact>
+			<Phone>3236586663</Phone>
+			<Email>reservations@elanhotel.com</Email>
+		</Contact>
+		<Address BusLines="05,09,20">
+			<Number>8435</Number>
+			<Street>Beverly Blvd</Street>
+			<City>Los Angeles</City>
+			<Zip>90048</Zip>
+		</Address>
+	</Hotel>
+
+	<Hotel Stars="****">
+		<Name>The Garland</Name>
+		<Contact>
+			<Phone>8189808000</Phone>
+			<Email>hello@thegarland.com</Email>
+		</Contact>
+		<Address >
+			<Number>4222</Number>
+			<Street>Vineland Ave</Street>
+			<City>North Hollywood</City>
+			<Zip>91602</Zip>
+		</Address>
+	</Hotel>
+
+	<Hotel Stars="***">
+		<Name>Hotel Chandler</Name>
+		<Contact>
+			<Phone>2128896363</Phone>
+			<Email>ChandlerRes@triumphny.com</Email>
+		</Contact>
+		<Address BusLines="12, 103, 245">
+			<Number>12</Number>
+			<Street>E 31st St</Street>
+			<City>New York</City>
+			<Zip>10016</Zip>
+		</Address>
+	</Hotel>
+
+</Hotels>
