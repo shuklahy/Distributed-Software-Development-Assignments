@@ -21,7 +21,7 @@
         <span class="auto-style2"><strong>XML Reader</strong></span><br />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-        URL for the XML ( my file: <a href="http://www.public.asu.edu/~hyshukla/Hotels.xml">http://www.public.asu.edu/~hyshukla/Hotels.xml</a>)<br />
+        URL for the XML<br />
         <asp:TextBox ID="TextBox3" runat="server" Width="465px"></asp:TextBox>
         <br />
         <br />

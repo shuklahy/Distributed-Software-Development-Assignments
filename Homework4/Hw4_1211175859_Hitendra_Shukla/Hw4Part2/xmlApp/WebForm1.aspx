@@ -21,12 +21,12 @@
         <span class="auto-style2"><strong>XmlValidator</strong></span><br />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-        URL for the XML (eg: <a href="http://www.public.asu.edu/~hyshukla/Hotels.xml">http://www.public.asu.edu/~hyshukla/Hotels.xml</a> )<br />
+        URL for the XML<br />
         <asp:TextBox ID="TextBox3" runat="server" Width="465px"></asp:TextBox>
         <br />
         <br />
         <br />
-        URL for the XSD ( eg. <a href="http://www.public.asu.edu/~hyshukla/Hotels.xsd">http://www.public.asu.edu/~hyshukla/Hotels.xsd</a> )<br />
+        URL for the XSD<br />
         <asp:TextBox ID="TextBox5" runat="server" Width="465px"></asp:TextBox>
         <br />
         <br />
